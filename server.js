@@ -241,7 +241,9 @@ A solução adapta-se às necessidades de cada entidade.
         demonstracoes: `
 Para solicitar uma demonstração personalizada da plataforma CIVITEK, envie um email para:
 
+<a href="mailto:sitiosnobres@gmail.com">
 📧 sitiosnobres@gmail.com
+</a>
 
 Teremos todo o gosto em apresentar as funcionalidades e módulos mais adequados às necessidades da sua entidade.
 `,
