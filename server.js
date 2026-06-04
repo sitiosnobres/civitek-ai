@@ -216,33 +216,78 @@ app.post("/chat", async (req, res) => {
         // =========================
 
         const pergunta = message.toLowerCase();
-     if (
-    pergunta.includes("o que e a civitek") ||
-    pergunta.includes("o que é a civitek") ||
-    pergunta === "civitek"
-) {
+      const modulos = {
+
+    documentos: `
+Módulo Gestão de Documentos
+
+• Arquivo digital de documentos
+• Pesquisa rápida e avançada
+• Gestão de categorias
+• Controlo de acessos
+• Organização documental
+`,
+
+    cemiterios: `
+Módulo Gestão de Cemitérios
+
+• Registo de sepulturas
+• Gestão de concessões
+• Registo de falecidos
+• Pesquisa de localização
+• Relatórios e mapas
+`,
+
+    ocorrencias: `
+Módulo Gestão de Ocorrências
+
+• Registo de ocorrências
+• Acompanhamento de estados
+• Georreferenciação
+• Notificações
+• Relatórios
+`,
+
+    biblioteca: `
+Módulo Biblioteca Digital
+
+• Publicação de documentos
+• Pesquisa online
+• Arquivo histórico
+• Download de conteúdos
+`,
+
+    formularios: `
+Módulo Formulários Digitais
+
+• Formulários online
+• Recolha automática de dados
+• Fluxos de aprovação
+• Integração com serviços
+`,
+
+    mobile: `
+Aplicação Mobile CIVITEK
+
+• Acesso móvel aos serviços
+• Participação cidadã
+• Consulta de informação
+• Notificações em tempo real
+`
+};
+      const chave = pergunta
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim();
+
+if (modulos[chave]) {
 
     return res.json({
-        reply: `
-A CIVITEK é uma plataforma de transformação digital para freguesias, municípios e entidades públicas.
-
-Principais módulos:
-
-• Gestão de Documentos
-• Gestão de Cemitérios
-• Formulários Digitais
-• Ocorrências
-• Biblioteca Digital
-• Relatórios & Indicadores
-• Aplicação Mobile
-• Bots de IA & Integrações
-
-Mais informações:
-https://civitek.sitiosnobres.pt
-`
+        reply: modulos[chave]
     });
 
 }
+     
       if (
     pergunta.includes("modulos") ||
     pergunta.includes("módulos")
@@ -292,7 +337,14 @@ https://civitek.sitiosnobres.pt
 
 Responde sempre em português de Portugal.
 
-Usa SEMPRE os resultados encontrados no site oficial.
+Usa os resultados do site apenas como contexto.
+
+Se o utilizador perguntar por um módulo da CIVITEK,
+explica as funcionalidades do módulo.
+
+Não respondas como um motor de pesquisa.
+Não digas "na página oficial encontra-se".
+Fala sempre da funcionalidade da plataforma.
 
 Se existirem links principais encontrados, dá prioridade máxima a esses links.
 
