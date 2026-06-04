@@ -221,6 +221,32 @@ A CIVITEK disponibiliza vários módulos de transformação digital para fregues
 
 Todos os módulos podem funcionar de forma integrada numa única plataforma.
 `,
+        funcionalidades: `
+A plataforma CIVITEK foi desenvolvida para simplificar a gestão administrativa e melhorar a comunicação com os cidadãos.
+
+Principais funcionalidades:
+
+• Digitalização de processos
+• Registo e acompanhamento de ocorrências
+• Gestão documental
+• Formulários online
+• Relatórios automáticos
+• Notificações aos utilizadores
+• Georreferenciação de ocorrências
+• Integração com aplicações móveis
+• Assistentes de Inteligência Artificial
+
+A solução adapta-se às necessidades de cada entidade.
+`,
+        if (
+    pergunta.includes("funcionalidades")
+) {
+
+    return res.json({
+        reply: modulos.funcionalidades
+    });
+
+}
 
     documentos: `
 Módulo Gestão de Documentos
