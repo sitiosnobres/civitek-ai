@@ -238,6 +238,13 @@ Principais funcionalidades:
 
 A solução adapta-se às necessidades de cada entidade.
 `,
+        demonstracoes: `
+Para solicitar uma demonstração personalizada da plataforma CIVITEK, envie um email para:
+
+📧 sitiosnobres@gmail.com
+
+Teremos todo o gosto em apresentar as funcionalidades e módulos mais adequados às necessidades da sua entidade.
+`,
     documentos: `
 Módulo Gestão de Documentos
 
@@ -333,6 +340,24 @@ if (
 
     return res.json({
         reply: modulos.funcionalidades
+    });
+
+}
+      if (
+    pergunta.includes("demonstração") ||
+    pergunta.includes("demonstracao") ||
+    pergunta.includes("demonstrações") ||
+    pergunta.includes("demonstracoes")
+) {
+
+    return res.json({
+        reply: `
+Para solicitar uma demonstração personalizada da plataforma CIVITEK, clique no endereço abaixo:
+
+<a href="mailto:sitiosnobres@gmail.com">📧 sitiosnobres@gmail.com</a>
+
+Teremos todo o gosto em agendar uma apresentação da plataforma.
+`
     });
 
 }
