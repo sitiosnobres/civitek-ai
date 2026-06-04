@@ -1,18 +1,10 @@
 {
-  "nome": "Comunicação digital para freguesias",
-
+  "nome": "CIVITEK",
   "site": "https://civitek.sitiosnobres.pt",
-
   "links": {
-
-    "módulos": "https://https://civitek.sitiosnobres.pt//",
-
-    "ocorrências": "https://civitek.sitiosnobres.pt//",
-
-    "Balcão digital": "https://civitek.sitiosnobres.pt/",
-
-    "assitente virtual": "https://civitek.sitiosnobres.pt/",
-
-    "Bots de IA & Integrações": "https://https://civitek.sitiosnobres.pt/"
+    "site": "https://civitek.sitiosnobres.pt",
+    "demo": "https://civitek.sitiosnobres.pt",
+    "contactos": "https://sitiosnobres.pt",
+    "modulos": "https://civitek.sitiosnobres.pt"
   }
 }
