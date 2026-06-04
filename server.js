@@ -216,6 +216,17 @@ app.post("/chat", async (req, res) => {
         // =========================
 
         const pergunta = message.toLowerCase();
+      if (
+    pergunta.includes("o que e a civitek") ||
+    pergunta.includes("o que é a civitek") ||
+    pergunta.includes("civitek")
+) {
+
+    return res.json({
+        reply: "TESTE CIVITEK OK"
+    });
+
+}
 
         // ATAS
 if (
