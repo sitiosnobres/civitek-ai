@@ -268,6 +268,19 @@ Para mais informações ou um estudo personalizado, contacte:
 📧 sitiosnobres@gmail.com
 </a>
 `,
+        apoio_comercial: `
+A equipa CIVITEK está disponível para prestar apoio comercial e esclarecer todas as questões relacionadas com a plataforma.
+
+Podemos ajudar na análise das necessidades da sua entidade, apresentação de módulos, demonstrações personalizadas, integração de soluções digitais e definição da melhor estratégia de implementação.
+
+Trabalhamos com freguesias, municípios e outras entidades que pretendam modernizar os seus serviços e melhorar a comunicação com os cidadãos.
+
+Para obter informações comerciais ou solicitar uma proposta personalizada, contacte:
+
+<a href="mailto:sitiosnobres@gmail.com">
+📧 sitiosnobres@gmail.com
+</a>
+`,
     documentos: `
 Módulo Gestão de Documentos
 
@@ -410,6 +423,19 @@ if (modulos[chave]) {
 
     return res.json({
         reply: modulos.integracoes
+    });
+
+}
+      if (
+    pergunta.includes("apoio comercial") ||
+    pergunta.includes("comercial") ||
+    pergunta.includes("proposta") ||
+    pergunta.includes("orçamento") ||
+    pergunta.includes("orcamento")
+) {
+
+    return res.json({
+        reply: modulos.apoio_comercial
     });
 
 }
