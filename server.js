@@ -238,16 +238,6 @@ Principais funcionalidades:
 
 A solução adapta-se às necessidades de cada entidade.
 `,
-        if (
-    pergunta.includes("funcionalidades")
-) {
-
-    return res.json({
-        reply: modulos.funcionalidades
-    });
-
-}
-
     documentos: `
 Módulo Gestão de Documentos
 
@@ -337,7 +327,15 @@ https://civitek.sitiosnobres.pt
     });
 
 }
+if (
+    pergunta.includes("funcionalidades")
+) {
 
+    return res.json({
+        reply: modulos.funcionalidades
+    });
+
+}
 if (modulos[chave]) {
 
     return res.json({
