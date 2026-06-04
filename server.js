@@ -372,8 +372,8 @@ Principais módulos:
 • Aplicação Mobile
 • Bots de IA & Integrações
 
-Mais informações:
-https://civitek.sitiosnobres.pt"
+Website oficial:
+https://sitiosnobres.pt/#contacto
 
 Se o utilizador perguntar por um módulo da CIVITEK,
 explica as funcionalidades do módulo.
