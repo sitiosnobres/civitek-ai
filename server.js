@@ -206,7 +206,7 @@ if (
 
     return res.json({
         reply: `
-Podes consultar as atas da União de Freguesias aqui:
+Podes consultar módulos aqui:
 
 ${config.links.atas}
 `
@@ -220,36 +220,36 @@ const perguntaNormalizada = pergunta
 
 // OCORRÊNCIAS
 if (
-    perguntaNormalizada.includes("ocorrencia") ||
-    perguntaNormalizada.includes("buraco") ||
-    perguntaNormalizada.includes("iluminacao") ||
-    perguntaNormalizada.includes("limpeza") ||
-    perguntaNormalizada.includes("agua") ||
-    perguntaNormalizada.includes("saneamento") ||
-    perguntaNormalizada.includes("estrada") ||
-    perguntaNormalizada.includes("lixo")
+    perguntaNormalizada.includes("Gestão de Documentos") ||
+    perguntaNormalizada.includes("Gestão de Cemitérios") ||
+    perguntaNormalizada.includes("Formulários Digitais") ||
+    perguntaNormalizada.includes("Relatórios & Indicadores") ||
+    perguntaNormalizada.includes("Ocorrências") ||
+    perguntaNormalizada.includes("Biblioteca Digital") ||
+    perguntaNormalizada.includes("Bots de IA & Integrações") ||
+    perguntaNormalizada.includes("Aplicação Mobile")
 ) {
 
     return res.json({
         reply: `
-Podes comunicar ocorrências da freguesia aqui:
+Podes encontrar aqui:
 
-https://www.cojaebarrildealva.pt/pin/
+https://www.sitiosnobres.pt/
 
-Através desta plataforma podes enviar fotografias, localização e acompanhar o estado da ocorrência.
+Procura nos conteúdos do website.
 `
     });
 
 }
 // EDITAIS
 if (
-    pergunta.includes("edital") ||
-    pergunta.includes("editais")
+    pergunta.includes("ocorrencia") ||
+    pergunta.includes("ocorrências")
 ) {
 
     return res.json({
         reply: `
-Podes consultar os editais e avisos aqui:
+Podes consultar aqui:
 
 ${config.links.editais}
 `
