@@ -245,6 +245,25 @@ Para solicitar uma demonstração personalizada da plataforma CIVITEK, envie um 
 
 Teremos todo o gosto em apresentar as funcionalidades e módulos mais adequados às necessidades da sua entidade.
 `,
+        integracoes: `
+A plataforma CIVITEK foi desenvolvida para integrar facilmente com diferentes serviços e tecnologias.
+
+Principais integrações:
+
+• Bots de Inteligência Artificial
+• Aplicações Mobile
+• Websites institucionais
+• Formulários digitais
+• QR Codes georreferenciados
+• Sistemas de gestão documental
+• Serviços externos e APIs
+
+A nossa equipa técnica especializada analisa cada projeto e desenvolve soluções de integração adaptadas às necessidades de cada entidade.
+
+Para mais informações ou um estudo personalizado, contacte:
+
+📧 sitiosnobres@gmail.com
+`,
     documentos: `
 Módulo Gestão de Documentos
 
@@ -375,6 +394,18 @@ if (modulos[chave]) {
 
     return res.json({
         reply: modulos.modulosplataforma
+    });
+
+}
+      if (
+    pergunta.includes("integrações") ||
+    pergunta.includes("integracoes") ||
+    pergunta.includes("integração") ||
+    pergunta.includes("integracao")
+) {
+
+    return res.json({
+        reply: modulos.integracoes
     });
 
 }
