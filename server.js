@@ -35,6 +35,25 @@ async function pesquisarSite(pergunta) {
 
         let resultados = "";
 
+      if (
+    pergunta.includes("o que é a civitek") ||
+    pergunta.includes("civitek") ||
+    pergunta.includes("sobre a civitek")
+) {
+
+    return res.json({
+        reply: `
+A CIVITEK é uma plataforma de transformação digital para autarquias, freguesias e entidades públicas.
+
+A solução integra módulos de Gestão Documental, Ocorrências, Formulários Digitais, Gestão de Cemitérios, Biblioteca Digital, Relatórios & Indicadores, Aplicação Mobile, Turismo Inteligente e Assistentes de IA.
+
+Mais informações:
+https://civitek.sitiosnobres.pt/
+`
+    });
+
+}
+
         // GOOGLE CUSTOM SEARCH
         const urlGoogle =
             `https://www.googleapis.com/customsearch/v1?q=${encodeURIComponent(pergunta)}&num=5&key=${process.env.GOOGLE_API_KEY}&cx=${process.env.GOOGLE_CX}`;
