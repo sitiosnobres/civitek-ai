@@ -121,7 +121,7 @@ ${pagina}
                         .replace(/[\u0300-\u036f]/g, "");
 
                     const slugLink = linkNormalizado
-                        .replace("https://www.cojaebarrildealva.pt/", "")
+                        .replace("https://www.civitek.sitiosnobres.pt/", "")
                         .replace(/\//g, " ")
                         .replace(/-/g, " ")
                         .trim();
@@ -323,7 +323,7 @@ ${config.links.executivo}
                 {
                     role: "system",
                     content: `
-És o assistente virtual oficial da União de Freguesias de Coja e Barril de Alva.
+És o assistente virtual oficial da civitek.
 
 Responde sempre em português de Portugal.
 
