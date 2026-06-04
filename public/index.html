@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Freguesia 24H</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+    background:#f5f7f5;
+}
+
+
+/* =========================================
+   APP
+========================================= */
+
+.chat-container{
+
+    width:100%;
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    background:#f5f7f5;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header{
+
+    height:78px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #239548,
+        #5dc96f
+    );
+
+    color:white;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 18px;
+
+    flex-shrink:0;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.12);
+}
+
+
+.header-left{
+
+    display:flex;
+    align-items:center;
+
+    gap:12px;
+}
+
+
+.bot-avatar{
+
+    width:48px;
+    height:48px;
+
+    border-radius:16px;
+
+    background:
+    rgba(255,255,255,.16);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:26px;
+
+    backdrop-filter:blur(10px);
+}
+
+
+.header-text h1{
+
+    font-size:18px;
+    font-weight:700;
+
+    line-height:1.1;
+}
+
+
+.header-text p{
+
+    font-size:14px;
+
+    opacity:.92;
+
+    margin-top:2px;
+}
+
+
+.online{
+
+    display:flex;
+    align-items:center;
+
+    gap:8px;
+
+    font-size:14px;
+    font-weight:600;
+}
+
+
+.online-dot{
+
+    width:10px;
+    height:10px;
+
+    border-radius:50%;
+
+    background:#d7ffd8;
+
+    box-shadow:
+    0 0 12px rgba(255,255,255,.9);
+}
+
+
+/* =========================================
+   MENSAGENS
+========================================= */
+
+.messages{
+
+    flex:1;
+
+    overflow-y:auto;
+
+    padding:18px;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:14px;
+}
+
+
+/* mensagem bot */
+
+.bot-message{
+
+    background:white;
+
+    padding:18px;
+
+    border-radius:22px;
+
+    max-width:92%;
+
+    line-height:1.7;
+
+    color:#2a2a2a;
+
+    box-shadow:
+    0 8px 22px rgba(0,0,0,.05);
+}
+
+
+/* mensagem user */
+
+.user-message{
+
+    background:
+    linear-gradient(
+        135deg,
+        #239548,
+        #4dbd63
+    );
+
+    color:white;
+
+    padding:16px 18px;
+
+    border-radius:22px;
+
+    margin-left:auto;
+
+    max-width:88%;
+
+    line-height:1.6;
+
+    box-shadow:
+    0 8px 22px rgba(0,0,0,.10);
+}
+
+
+/* links */
+
+.bot-message a{
+
+    color:#239548;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    word-break:break-word;
+}
+
+
+.bot-message a:hover{
+
+    text-decoration:underline;
+}
+
+
+/* =========================================
+   INPUT
+========================================= */
+
+.input-area{
+
+    padding:16px;
+
+    background:white;
+
+    border-top:
+    1px solid rgba(0,0,0,.06);
+
+    display:flex;
+
+    gap:10px;
+
+    flex-shrink:0;
+}
+
+
+.input-area input{
+
+    flex:1;
+
+    height:54px;
+
+    border:none;
+
+    background:#f1f3f2;
+
+    border-radius:18px;
+
+    padding:0 18px;
+
+    font-size:15px;
+
+    outline:none;
+}
+
+
+.input-area button{
+
+    width:58px;
+    height:54px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #239548,
+        #4dbd63
+    );
+
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+
+.input-area button:hover{
+
+    transform:scale(1.04);
+}
+
+
+/* =========================================
+   TYPING
+========================================= */
+
+.typing{
+
+    background:white;
+
+    padding:16px;
+
+    border-radius:20px;
+
+    width:max-content;
+
+    color:#666;
+
+    font-style:italic;
+
+    animation:pulse 1s infinite;
+}
+
+
+@keyframes pulse{
+
+    0%{
+        opacity:.45;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:.45;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:768px){
+
+    .header{
+
+        height:74px;
+
+        padding:0 14px;
+    }
+
+    .header-text h1{
+
+        font-size:17px;
+    }
+
+    .header-text p{
+
+        font-size:13px;
+    }
+
+    .messages{
+
+        padding:14px;
+    }
+
+    .input-area{
+
+        padding:12px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="chat-container">
+
+    <div class="header">
+
+        <div class="header-left">
+
+            <div class="bot-avatar">
+                🤖
+            </div>
+
+            <div class="header-text">
+
+                <h1>Freguesia 24H</h1>
+
+                <p>Apoio digital UFCBA</p>
+
+            </div>
+
+        </div>
+
+        <div class="online">
+
+            <div class="online-dot"></div>
+
+            Online
+
+        </div>
+
+    </div>
+
+
+    <div class="messages" id="messages">
+
+        <div class="bot-message">
+
+            👋 Olá! Sou o assistente digital da União de Freguesias.<br><strong>Como posso ajudar?</strong><br><br>
+
+            Posso ajudar com:<br>
+
+            • Contactos<br>
+            • Serviços online<br>
+            • Eventos e notícias<br>
+            • Apoio ao cidadão<br>
+            • Informações da freguesia
+
+        </div>
+
+    </div>
+
+
+    <div class="input-area">
+
+        <input
+            type="text"
+            id="userInput"
+            placeholder="Escreva a sua mensagem..."
+        >
+
+        <button onclick="sendMessage()">
+            ➜
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function formatarLinks(texto){
+
+    return texto.replace(
+        /(https?:\/\/[^\s]+)/g,
+        '<a href="$1" target="_blank">$1</a>'
+    );
+}
+
+
+async function sendMessage(){
+
+    const input =
+    document.getElementById("userInput");
+
+    const text =
+    input.value.trim();
+
+    if(!text) return;
+
+    const messages =
+    document.getElementById("messages");
+
+
+    // mensagem user
+
+    const userDiv =
+    document.createElement("div");
+
+    userDiv.className =
+    "user-message";
+
+    userDiv.innerText =
+    text;
+
+    messages.appendChild(userDiv);
+
+    input.value = "";
+
+    messages.scrollTop =
+    messages.scrollHeight;
+
+
+    // typing
+
+    const typingDiv =
+    document.createElement("div");
+
+    typingDiv.className =
+    "typing";
+
+    typingDiv.innerText =
+    "A escrever a resposta...";
+
+    messages.appendChild(typingDiv);
+
+    messages.scrollTop =
+    messages.scrollHeight;
+
+
+    try{
+
+        const response =
+        await fetch("/chat",{
+
+            method:"POST",
+
+            headers:{
+                "Content-Type":"application/json"
+            },
+
+            body:JSON.stringify({
+                message:text
+            })
+        });
+
+        const data =
+        await response.json();
+
+        typingDiv.remove();
+
+        const botDiv =
+        document.createElement("div");
+
+        botDiv.className =
+        "bot-message";
+
+        botDiv.innerHTML =
+        formatarLinks(data.reply);
+
+        messages.appendChild(botDiv);
+
+    }
+
+    catch(error){
+
+        typingDiv.remove();
+
+        const erroDiv =
+        document.createElement("div");
+
+        erroDiv.className =
+        "bot-message";
+
+        erroDiv.innerText =
+        "Erro ao contactar o servidor.";
+
+        messages.appendChild(erroDiv);
+    }
+
+    messages.scrollTop =
+    messages.scrollHeight;
+}
+
+
+/* enter */
+
+document
+.getElementById("userInput")
+.addEventListener("keypress", function(e){
+
+    if(e.key === "Enter"){
+
+        sendMessage();
+    }
+
+});
+
+</script>
+
+</body>
+</html>
