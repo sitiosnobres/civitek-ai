@@ -303,6 +303,22 @@ Para apoio técnico ou esclarecimentos, contacte:
 📧 sitiosnobres@gmail.com
 </a>
 `,
+        contactos: `
+Para informações, demonstrações ou esclarecimentos sobre a plataforma CIVITEK, poderá contactar:
+
+👤 Joaquim Nobre
+Responsável por Demonstrações e Apoio ao Projeto CIVITEK
+
+📱 WhatsApp / Telemóvel:
++351 938 500 493
+
+📧 Email:
+<a href="mailto:jcpfnobre@gmail.com">
+jcpfnobre@gmail.com
+</a>
+
+Será um prazer apresentar a plataforma e esclarecer qualquer questão relacionada com os módulos, funcionalidades e soluções de transformação digital da CIVITEK.
+`,
     documentos: `
 Módulo Gestão de Documentos
 
@@ -474,6 +490,18 @@ if (modulos[chave]) {
 
     return res.json({
         reply: modulos.questoes_tecnicas
+    });
+
+}
+      if (
+    pergunta.includes("contactos") ||
+    pergunta.includes("contatos") ||
+    pergunta.includes("contacto") ||
+    pergunta.includes("contato")
+) {
+
+    return res.json({
+        reply: modulos.contactos
     });
 
 }
