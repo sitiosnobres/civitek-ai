@@ -281,6 +281,28 @@ Para obter informações comerciais ou solicitar uma proposta personalizada, con
 📧 sitiosnobres@gmail.com
 </a>
 `,
+        questoes_tecnicas: `
+A equipa técnica da CIVITEK presta apoio especializado na implementação, configuração e evolução da plataforma.
+
+Podemos ajudar com:
+
+• Configuração de módulos
+• Integração com sistemas externos
+• Bots de Inteligência Artificial
+• Aplicações Mobile
+• Formulários digitais
+• Gestão documental
+• QR Codes georreferenciados
+• Suporte técnico e esclarecimento de dúvidas
+
+Cada projeto é analisado de forma personalizada para garantir a melhor solução técnica para a sua entidade.
+
+Para apoio técnico ou esclarecimentos, contacte:
+
+<a href="mailto:sitiosnobres@gmail.com">
+📧 sitiosnobres@gmail.com
+</a>
+`,
     documentos: `
 Módulo Gestão de Documentos
 
@@ -436,6 +458,22 @@ if (modulos[chave]) {
 
     return res.json({
         reply: modulos.apoio_comercial
+    });
+
+}
+      if (
+    pergunta.includes("questões técnicas") ||
+    pergunta.includes("questoes tecnicas") ||
+    pergunta.includes("questão técnica") ||
+    pergunta.includes("questao tecnica") ||
+    pergunta.includes("suporte técnico") ||
+    pergunta.includes("suporte tecnico") ||
+    pergunta.includes("apoio técnico") ||
+    pergunta.includes("apoio tecnico")
+) {
+
+    return res.json({
+        reply: modulos.questoes_tecnicas
     });
 
 }
