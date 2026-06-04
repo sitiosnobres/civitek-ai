@@ -216,126 +216,61 @@ app.post("/chat", async (req, res) => {
         // =========================
 
         const pergunta = message.toLowerCase();
-      if (
+     if (
     pergunta.includes("o que e a civitek") ||
     pergunta.includes("o que é a civitek") ||
-    pergunta.includes("civitek")
-) {
-
-    return res.json({
-        reply: "TESTE CIVITEK OK"
-    });
-
-}
-
-        // ATAS
-if (
-    pergunta.includes("ata") ||
-    pergunta.includes("atas")
+    pergunta === "civitek"
 ) {
 
     return res.json({
         reply: `
-Podes consultar módulos aqui:
+A CIVITEK é uma plataforma de transformação digital para freguesias, municípios e entidades públicas.
 
-${config.links.atas}
+Principais módulos:
+
+• Gestão de Documentos
+• Gestão de Cemitérios
+• Formulários Digitais
+• Ocorrências
+• Biblioteca Digital
+• Relatórios & Indicadores
+• Aplicação Mobile
+• Bots de IA & Integrações
+
+Mais informações:
+https://civitek.sitiosnobres.pt
 `
     });
 
 }
-const perguntaNormalizada = pergunta
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase();
-
-// OCORRÊNCIAS
-if (
-    perguntaNormalizada.includes("Gestão de Documentos") ||
-    perguntaNormalizada.includes("Gestão de Cemitérios") ||
-    perguntaNormalizada.includes("Formulários Digitais") ||
-    perguntaNormalizada.includes("Relatórios & Indicadores") ||
-    perguntaNormalizada.includes("Ocorrências") ||
-    perguntaNormalizada.includes("Biblioteca Digital") ||
-    perguntaNormalizada.includes("Bots de IA & Integrações") ||
-    perguntaNormalizada.includes("Aplicação Mobile")
+      if (
+    pergunta.includes("modulos") ||
+    pergunta.includes("módulos")
 ) {
 
     return res.json({
         reply: `
-Podes encontrar aqui:
+A plataforma CIVITEK inclui:
 
-https://www.sitiosnobres.pt/
+• Gestão de Documentos
+• Gestão de Cemitérios
+• Formulários Digitais
+• Ocorrências
+• Biblioteca Digital
+• Relatórios & Indicadores
+• Aplicação Mobile
+• Bots de IA & Integrações
+• Turismo Inteligente
+• QR Codes Georreferenciados
 
-Procura nos conteúdos do website.
-`
-    });
-
-}
-// EDITAIS
-if (
-    pergunta.includes("ocorrencia") ||
-    pergunta.includes("ocorrências")
-) {
-
-    return res.json({
-        reply: `
-Podes consultar aqui:
-
-${config.links.editais}
+Mais informações:
+https://civitek.sitiosnobres.pt
 `
     });
 
 }
 
-// EVENTOS
-if (
-    pergunta.includes("evento") ||
-    pergunta.includes("eventos")
-) {
-
-    return res.json({
-        reply: `
-Podes consultar a agenda oficial de eventos aqui:
-
-${config.links.eventos}
-`
-    });
-
-}
-
-// TURISMO
-if (
-    pergunta.includes("turismo") ||
-    pergunta.includes("portal de turismo")
-) {
-
-    return res.json({
-        reply: `
-Podes consultar o portal oficial de turismo aqui:
-
-${config.links.turismo}
-`
-    });
-
-}
-
-// EXECUTIVO / JUNTA / COMPOSIÇÃO
-if (
-    pergunta.includes("executivo") ||
-    pergunta.includes("junta de freguesia") ||
-    pergunta.includes("composicao") ||
-    pergunta.includes("composição")
-) {
-
-    return res.json({
-        reply: `
-Podes consultar a composição do executivo da Junta de Freguesia aqui:
-
-${config.links.executivo}
-`
-    });
-
-}
+     
 
         // PESQUISAR SITE
         const resultadosSite = await pesquisarSite(message);
