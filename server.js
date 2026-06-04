@@ -35,24 +35,7 @@ async function pesquisarSite(pergunta) {
 
         let resultados = "";
 
-      if (
-    pergunta.includes("o que é a civitek") ||
-    pergunta.includes("civitek") ||
-    pergunta.includes("sobre a civitek")
-) {
-
-    return res.json({
-        reply: `
-A CIVITEK é uma plataforma de transformação digital para autarquias, freguesias e entidades públicas.
-
-A solução integra módulos de Gestão Documental, Ocorrências, Formulários Digitais, Gestão de Cemitérios, Biblioteca Digital, Relatórios & Indicadores, Aplicação Mobile, Turismo Inteligente e Assistentes de IA.
-
-Mais informações:
-https://civitek.sitiosnobres.pt/
-`
-    });
-
-}
+    
 
         // GOOGLE CUSTOM SEARCH
         const urlGoogle =
@@ -216,6 +199,11 @@ app.post("/chat", async (req, res) => {
         // =========================
 
         const pergunta = message.toLowerCase();
+      const perguntaLimpa = pergunta
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[?.,!]/g, "")
+    .trim();
       const modulos = {
 
     documentos: `
@@ -275,9 +263,49 @@ Aplicação Mobile CIVITEK
 • Notificações em tempo real
 `
 };
-      const chave = pergunta
+     const chave = perguntaLimpa
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
+       const chave = perguntaLimpa
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim();
+
+if (
+    chave.includes("o que e a civitek") ||
+    chave === "civitek"
+) {
+
+    return res.json({
+        reply: `
+A CIVITEK é uma plataforma de transformação digital para freguesias, municípios e entidades públicas.
+
+Principais módulos:
+
+• Gestão de Documentos
+• Gestão de Cemitérios
+• Formulários Digitais
+• Ocorrências
+• Biblioteca Digital
+• Relatórios & Indicadores
+• Aplicação Mobile
+• Bots de IA & Integrações
+• Turismo Inteligente
+
+Mais informações:
+https://civitek.sitiosnobres.pt
+`
+    });
+
+}
+
+if (modulos[chave]) {
+
+    return res.json({
+        reply: modulos[chave]
+    });
+
+}
     .trim();
 
 if (modulos[chave]) {
