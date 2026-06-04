@@ -262,7 +262,9 @@ A nossa equipa técnica especializada analisa cada projeto e desenvolve soluçõ
 
 Para mais informações ou um estudo personalizado, contacte:
 
+<a href="mailto:sitiosnobres@gmail.com">
 📧 sitiosnobres@gmail.com
+</a>
 `,
     documentos: `
 Módulo Gestão de Documentos
