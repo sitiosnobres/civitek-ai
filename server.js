@@ -71,16 +71,8 @@ ${item.snippet}
 
         // PÁGINAS IMPORTANTES
         const paginas = [
-            "https://www.cojaebarrildealva.pt/",
-            "https://www.cojaebarrildealva.pt/pin/",
-            "https://www.cojaebarrildealva.pt/assembleia-de-freguesia/",
-            "https://www.cojaebarrildealva.pt/concursos-contratacao-publica/",
-            "https://www.jfcojaturismo.pt/",
-            "https://www.cojaebarrildealva.pt/category/noticias/",
-            "https://www.cojaebarrildealva.pt/publicacoes-oficiais/",
-            "https://www.cojaebarrildealva.pt/espaco-do-cidadao/",
-            "https://www.cojaebarrildealva.pt/secretaria-online/",
-            "https://www.cojaebarrildealva.pt/agenda-de-eventos/"
+            "https://www.civitek.sitiosnobres.pt/",
+          
         ];
 
         let encontrou = false;
