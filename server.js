@@ -205,6 +205,22 @@ app.post("/chat", async (req, res) => {
     .replace(/[?.,!]/g, "")
     .trim();
       const modulos = {
+        modulosplataforma: `
+A CIVITEK disponibiliza vários módulos de transformação digital para freguesias e entidades públicas.
+
+• Gestão de Documentos
+• Gestão de Cemitérios
+• Formulários Digitais
+• Gestão de Ocorrências
+• Biblioteca Digital
+• Relatórios e Indicadores
+• Aplicação Mobile
+• Bots de IA e Integrações
+• Turismo Inteligente
+• QR Codes Georreferenciados
+
+Todos os módulos podem funcionar de forma integrada numa única plataforma.
+`,
 
     documentos: `
 Módulo Gestão de Documentos
@@ -300,6 +316,16 @@ if (modulos[chave]) {
 
     return res.json({
         reply: modulos[chave]
+    });
+
+}
+      if (
+    pergunta.includes("módulos da plataforma") ||
+    pergunta.includes("modulos da plataforma")
+) {
+
+    return res.json({
+        reply: modulos.modulosplataforma
     });
 
 }
