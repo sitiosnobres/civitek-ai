@@ -263,7 +263,49 @@ Aplicação Mobile CIVITEK
 • Notificações em tempo real
 `
 };
-     
+const chave = perguntaLimpa
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .trim();
+
+if (
+    chave.includes("o que e a civitek") ||
+    chave === "civitek"
+) {
+
+    return res.json({
+        reply: `
+A CIVITEK é uma plataforma de transformação digital para freguesias, municípios e entidades públicas.
+
+Principais módulos:
+
+• Gestão de Documentos
+• Gestão de Cemitérios
+• Formulários Digitais
+• Ocorrências
+• Biblioteca Digital
+• Relatórios & Indicadores
+• Aplicação Mobile
+• Bots de IA & Integrações
+• Turismo Inteligente
+
+Mais informações:
+https://civitek.sitiosnobres.pt
+`
+    });
+
+}
+
+if (modulos[chave]) {
+
+    return res.json({
+        reply: modulos[chave]
+    });
+
+}
+
+if (
+    pergunta.includes("modulos") ||
     pergunta.includes("módulos")
 ) {
 
@@ -288,8 +330,6 @@ https://civitek.sitiosnobres.pt
     });
 
 }
-
-     
 
         // PESQUISAR SITE
         const resultadosSite = await pesquisarSite(message);
